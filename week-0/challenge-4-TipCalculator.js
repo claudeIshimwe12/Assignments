@@ -19,3 +19,11 @@ for(let i = 0; i < bills.length; i++){
 
 console.log(tips)
 console.log(totals)
+
+// Bonus
+const calcAverage = (arr) =>{
+    return arr.reduce((a,b) => a + b)/arr.length
+}
+
+console.log(calcAverage(totals))
+console.log(calcAverage(tips))
