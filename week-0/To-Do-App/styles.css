@@ -104,3 +104,18 @@ body {
   background-color: #ffff80;
   color: #ffbf00;
 }
+.btn-secondary {
+  border: none;
+  padding: 0.2rem;
+  margin: 0.2rem auto;
+  border-radius: 2px;
+  background-color: #ffff80;
+}
+.delete-btn {
+  border: 1.5px solid #c40c0c;
+  color: #c40c0c;
+}
+.update-btn {
+  border: 1.5px solid #ffbf00;
+  margin: 0.1rem 0.2rem;
+}
