@@ -32,10 +32,8 @@ body {
 /* ------------------List items show panel ------------------*/
 
 .right {
-  width: 50%;
   background-color: #ffff80;
   border-radius: 4px;
-  height: 10 px;
   padding: 2rem;
 }
 .task {
@@ -54,6 +52,7 @@ body {
 
 .left {
   padding: 2rem;
+  width: 40%;
 }
 .left h2 {
   font-size: 22px;
@@ -82,6 +81,7 @@ body {
   border-bottom: 1.5px solid black;
   background-color: beige;
   margin: 0.4rem auto;
+  width: 100%;
 }
 
 .input {
@@ -118,4 +118,16 @@ body {
 .update-btn {
   border: 1.5px solid #ffbf00;
   margin: 0.1rem 0.2rem;
+}
+.complete-btn {
+  background-color: #365e32;
+  color: #f6f5f2;
+}
+
+/* Completed Tasks */
+
+.complete-tasks {
+  background-color: #b3e2a7;
+  border-radius: 4px;
+  padding: 2rem;
 }

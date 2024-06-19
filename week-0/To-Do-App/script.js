@@ -1,7 +1,7 @@
 "use strict";
 
 const tasks = [];
-
+const completeTasks = [];
 const addBtn = document.querySelector(".add-task");
 
 addBtn.addEventListener("click", function () {
@@ -23,7 +23,12 @@ addBtn.addEventListener("click", function () {
   // Create Delete Buttons and add them to the task list
   const deleteDiv = document.createElement("div");
   const deleteBtn = document.createElement("button");
+  const completeBtn = document.createElement("button");
   deleteBtn.textContent = "Delete";
+  completeBtn.textContent = "Complete";
+  completeBtn.classList.add("btn-secondary");
+  completeBtn.classList.add("complete-btn");
+
   deleteBtn.classList.add("btn-secondary");
   deleteBtn.classList.add("delete-btn");
   const updateBtn = document.createElement("button");
@@ -33,6 +38,7 @@ addBtn.addEventListener("click", function () {
 
   deleteDiv.append(deleteBtn);
   deleteDiv.append(updateBtn);
+  deleteDiv.append(completeBtn);
 
   // Create elements and add the to the DOM Tree
 
@@ -65,7 +71,41 @@ addBtn.addEventListener("click", function () {
       e.preventDefault();
       if (e.target.classList.contains("delete-btn")) {
         e.target.parentNode.parentNode.remove();
+      } else if (e.target.classList.contains("complete-btn")) {
+        const elements = Array.from(e.target.parentNode.parentNode.children);
+        let cTitle;
+        let cDesc;
+        let cExp;
+        elements.forEach((element) => {
+          if (element.classList.contains("task-title")) {
+            cTitle = element.textContent;
+          } else if (element.classList.contains("task-description")) {
+            cDesc = element.textContent;
+          } else if (element.classList.contains("task-expiration-date")) {
+            cExp = element.textContent;
+          }
+        });
+
+        completeTasks.push({
+          title: cTitle,
+          description: cDesc,
+          expDate: cExp,
+        });
+        tasks.splice(
+          tasks.indexOf({ title: cTitle, description: cDesc, expDate: cExp }),
+          1
+        );
       }
+      completeTasks.forEach((task) => {
+        const completeTasksWrapper =
+          document.querySelector(".complete-wrapper");
+        const cTask = document.createElement("div");
+        cTask.innerHTML = `<div>
+        <h1>${task.title}</h1> <br> <p>${task.description} </p> <br> <p> ${task.expDate} </p>
+        </div><br>`;
+
+        completeTasksWrapper.append(cTask);
+      });
     });
   });
 });
