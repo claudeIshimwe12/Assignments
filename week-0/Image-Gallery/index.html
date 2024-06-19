@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Image Gallery</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="top">
+        <button class="btn prev">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="4em"
+            height="4em"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              d="m15 6l-6 6l6 6"
+            />
+          </svg>
+        </button>
+        <img
+          src="https://images.unsplash.com/photo-1717705422478-0b42e89e06b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNTR8fHxlbnwwfHx8fHw%3D"
+          alt=""
+          class="active-image"
+        />
+        <button class="btn next">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="4em"
+            height="4em"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M8.59 16.58L13.17 12L8.59 7.41L10 6l6 6l-6 6z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="bottom"></div>
+      <h1 class="caption">Caption</h1>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
