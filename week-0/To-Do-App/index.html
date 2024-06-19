@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>To Do App</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="main-text">To Do List App</h1>
+      <div class="lg-wrapper">
+        <div class="left">
+          <h2>Add new task</h2>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Task Title"
+            class="input title-input"
+          />
+          <br />
+          <textarea
+            name="description"
+            id="desc"
+            cols="21"
+            rows="4"
+            placeholder="Task Description"
+            class="description"
+          ></textarea>
+          <br />
+          <input
+            type="datetime-local"
+            name="expDate"
+            id="expDate"
+            class="input date"
+          />
+          <br />
+          <button class="btn add-task">Create Task</button>
+        </div>
+        <div class="right">
+          <div class="task-list">
+            <h1>Task List</h1>
+            <div class="task">
+              <h1 class="task-title">Wake up</h1>
+              <p class="task-description">Get out of ma bed</p>
+              <p class="task-expiration-date">2024-06-22T05:30</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
