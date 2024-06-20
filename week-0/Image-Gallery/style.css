@@ -15,6 +15,7 @@ body {
 .thumbnail {
   width: 80px;
   height: 80px;
+  margin: 0 0 0.2rem;
 }
 .top {
   display: flex;
@@ -42,6 +43,7 @@ body {
 .active-image {
   width: 468px;
   height: fit-content;
+  transition: all 1s ease;
 }
 .btn {
   background-color: #fff;
@@ -71,7 +73,7 @@ body {
   }
   .bottom {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.4rem;
     margin: 2rem auto 6rem;
     padding: 0 2rem;
@@ -80,5 +82,16 @@ body {
   .caption {
     width: 80%;
     bottom: 0;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 686px) {
+  .bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+    margin: 4rem auto 6rem;
+    padding: 0 4rem;
+    width: 100%;
   }
 }
