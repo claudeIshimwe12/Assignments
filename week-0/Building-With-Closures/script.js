@@ -40,3 +40,24 @@ const handleClick = () => {
   console.log(this.textContent, " Text Content");
 };
 button.addEventListener("click", handleClick);
+
+// Private Data with Closures and this
+
+function createCounter() {
+  let count = 0;
+
+  return {
+    increment() {
+      count++;
+      console.log(count);
+    },
+    getCount() {
+      console.log(count);
+    },
+  };
+}
+
+const count = createCounter();
+count.increment();
+count.increment();
+count.getCount();
