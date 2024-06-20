@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+button {
+  padding: 0.6rem;
+  background-color: aquamarine;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+}
