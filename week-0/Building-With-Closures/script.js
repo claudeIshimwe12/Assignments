@@ -61,3 +61,18 @@ const count = createCounter();
 count.increment();
 count.increment();
 count.getCount();
+
+function createTimer(duration, elementId) {
+  const element = document.getElementById(`${elementId}`);
+
+  const intervalId = setInterval(function () {
+    element.textContent = duration;
+    duration--;
+    if (duration == -1) {
+      console.log("The time is over");
+      clearInterval(intervalId);
+    }
+  }, 6000);
+}
+
+createTimer(2, "timer-output");
