@@ -9,6 +9,7 @@ body {
 }
 
 .wrapper {
+  position: relative;
   padding: 4rem 0;
 }
 .thumbnail {
@@ -22,8 +23,10 @@ body {
 .bottom {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin: 2rem auto;
   padding: 0 8rem;
+  width: 60%;
 }
 .active {
   display: block;
@@ -37,8 +40,8 @@ body {
   align-items: center;
 }
 .active-image {
-  width: 480px;
-  height: max-content;
+  width: 468px;
+  height: fit-content;
 }
 .btn {
   background-color: #fff;
@@ -47,11 +50,35 @@ body {
 
 .caption {
   position: absolute;
-  bottom: 2rem;
+  bottom: 0;
   font-size: 18px;
-  left: 46rem;
+  right: 2rem;
   width: 428px;
   background-color: #f4f4f4;
   padding: 2rem;
   /* transform: translateX(640px); */
+}
+
+/*================ Phone Responsive breakpoint ===============*/
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    padding: 2rem 0;
+    width: 100%;
+  }
+  .active-image {
+    width: 80%;
+  }
+  .bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+    margin: 2rem auto 6rem;
+    padding: 0 2rem;
+    width: 100%;
+  }
+  .caption {
+    width: 80%;
+    bottom: 0;
+  }
 }
