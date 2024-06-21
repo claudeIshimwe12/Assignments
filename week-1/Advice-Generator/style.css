@@ -21,9 +21,10 @@ body {
 
 .attribution {
   font-size: 11px;
-  text-align: center;
+  text-align: end;
   width: 100vw;
   padding: 1rem;
+  color: var(--primary-cyan);
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
@@ -36,6 +37,7 @@ body {
 }
 .card {
   position: relative;
+  width: 50%;
   background-color: var(--neutral-dark-grayish-blue);
   color: var(--primary-cyan);
   padding: 2rem;
@@ -44,10 +46,12 @@ body {
 }
 .card .advice-id {
   text-align: center;
+  margin: 2rem 0;
   color: var(--primary-green);
 }
 .line {
   display: flex;
+  margin: 2rem 0;
   align-items: center;
   justify-content: space-between;
 }
@@ -67,9 +71,16 @@ body {
 .left {
   height: 0.1px;
   border-radius: 20%;
-  width: 40%;
+  width: 48%;
   background-color: var(--primary-cyan);
   opacity: 0.5;
+}
+.btn {
+  position: absolute;
+  left: 46%;
+  padding: 1rem;
+  background-color: var(--primary-green);
+  border-radius: 50%;
 }
 .btn button {
   background-color: var(--primary-green);
@@ -129,7 +140,7 @@ body {
     margin: 1rem 0;
   }
   .card .advice {
-    font-size: 28px;
+    font-size: 24px;
     margin: 2rem 0;
     text-align: center;
   }
