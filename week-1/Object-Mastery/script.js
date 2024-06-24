@@ -137,4 +137,25 @@ const villain1 = new SuperVillain(
   ["Crazy"]
 );
 
+const villain2 = new SuperVillain(
+  "Ajax",
+  "Franci Freeman",
+  ["Military Strategies", "Shooting", "Ruthless"],
+  ["No super power"]
+);
+const villain3 = new SuperVillain(
+  "Wolveline Clone",
+  "Clone",
+  ["Healing", "Titanium Skeleton", "Sharp craws"],
+  ["Drunkard"]
+);
+const villain4 = new SuperVillain(
+  "General Zod",
+  "General Zod",
+  ["Laser eyes", "Flying", "Made of Steel"],
+  ["cyrptonium"]
+);
+
+const villains = [villain1, villain2, villain3, villain4];
 villain1.usePower();
+console.log(villains);
