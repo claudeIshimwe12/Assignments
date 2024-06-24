@@ -67,8 +67,10 @@ function displayClock(format = 24) {
   } else if (format === 12 && hour > 12) {
     hour = hour - 12;
     HH = hour < 10 ? `0${hour}` : hour;
-  } else {
+  } else if (hour.length == 1) {
     HH = `0${hour}`;
+  } else {
+    HH = hour;
   }
   const MM =
     time.getMinutes() < 10 ? `0${time.getMinutes()}` : time.getMinutes();
@@ -103,11 +105,47 @@ formatBtn.addEventListener("change", function () {
 const alarmButton = document.querySelector(".alarm");
 const alarmDisplay = document.querySelector(".alarm-display");
 
-const alarmsArray = [];
+let alarm;
+const overLay = document.querySelector(".overlay");
+const alarmSetButton = document.querySelector(".set-alarm");
+const alarmInput = document.getElementById("alarm");
+const alarmContainer = document.querySelector(".container");
+
+overLay.addEventListener("click", function () {
+  this.classList.toggle("hidden");
+  alarmContainer.classList.toggle("hidden");
+});
 alarmButton.addEventListener("click", function () {
-  const input = prompt("Please Add in alarm set off time", "00:00:00 AM");
-  alarmsArray.push(input);
+  overLay.classList.toggle("hidden");
+  alarmContainer.classList.toggle("hidden");
+});
+
+alarmSetButton.addEventListener("click", function () {
+  if (!alarmInput.value) alert("Please specify a time for your alarm");
+  if (alarmInput.value == alarm) {
+    alert(
+      "Oops!, Alarm already set. Please change the time for your new alarm?"
+    );
+    return;
+  }
+  alarm = alarmInput.value;
+  overLay.classList.toggle("hidden");
+  alarmContainer.classList.toggle("hidden");
   const h1 = document.createElement("h1");
-  h1.textContent = input;
+  h1.textContent = alarmInput.value;
   alarmDisplay.appendChild(h1);
 });
+const alarmInterval = setInterval(function () {
+  setAlarmOff();
+}, 1000);
+
+function setAlarmOff(arr) {
+  const H = new Date().getHours();
+  const M = new Date().getMinutes();
+  const currentTime2 = `${H}:${M}`;
+
+  if (currentTime2 === alarm) {
+    alert("Time's Up Big fella !!!");
+    clearInterval(alarmInterval);
+  }
+}

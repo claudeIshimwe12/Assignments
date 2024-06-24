@@ -51,8 +51,60 @@ label {
 .alarms-wrapper {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+.set-alarm {
+  padding: 1rem 2rem;
+  background-color: var(--light-green);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  margin: 1rem 0;
+  font-weight: 800;
+}
+.alarm {
+  padding: 1rem 2.4rem;
+  background-color: var(--dark-green);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  margin: 1rem 0;
+  font-weight: 800;
 }
 
+/*================ Overlay and Pop Up form Styles ===========*/
+.overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.with-blur-backdrop {
+  background-color: rgba(207, 205, 205, 0.4);
+
+  -webkit-backdrop-filter: blur(5px);
+
+  backdrop-filter: blur(5px);
+
+  padding: 20px 30px;
+}
+.hidden {
+  display: none;
+}
+.alarm-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  width: 20%;
+  padding: 2rem;
+  background-color: var(--dark-green);
+  z-index: 5;
+}
 @media screen and (max-width: 480px) {
   .clock {
     font-size: 1rem;
