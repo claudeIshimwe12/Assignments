@@ -62,17 +62,20 @@ function displayClock(format = 24) {
   const time = new Date();
   let hour = new Date().getHours();
   let HH;
-  if (format === 12 && hour > 12) {
+  if (hour == 0) {
+    HH = "00";
+  } else if (format === 12 && hour > 12) {
     hour = hour - 12;
     HH = hour < 10 ? `0${hour}` : hour;
   } else {
-    HH = hour;
+    HH = `0${hour}`;
   }
   const MM =
     time.getMinutes() < 10 ? `0${time.getMinutes()}` : time.getMinutes();
   const SS =
     time.getSeconds() < 10 ? `0${time.getSeconds()}` : time.getSeconds();
-  display.textContent = HH + ":" + MM + ":" + SS;
+  const dateFormat = HH > 12 ? (format == 24 ? "PM" : "AM") : "AM";
+  display.textContent = HH + ":" + MM + ":" + SS + " " + dateFormat;
 }
 const def = setInterval(() => {
   displayClock(24);
@@ -80,13 +83,31 @@ const def = setInterval(() => {
 
 const formatBtn = document.getElementById("format-options");
 formatBtn.addEventListener("change", function () {
-  console.log("I got changed");
-  console.log(formatBtn.value);
   if (formatBtn.value == 24) {
     location.reload();
   }
+  document.body.style.backgroundColor = "var(--dark-green)";
+  document.querySelector(".wrapper").style.backgroundColor =
+    "var(--light-green)";
+  document.querySelector(".clock").style.color = "black";
+  document.getElementById("format-options").style.backgroundColor =
+    "var(--light-green)";
   clearInterval(def);
   setInterval(() => {
     displayClock(12);
   }, 1000);
+});
+
+// 6) Alarm Feature
+
+const alarmButton = document.querySelector(".alarm");
+const alarmDisplay = document.querySelector(".alarm-display");
+
+const alarmsArray = [];
+alarmButton.addEventListener("click", function () {
+  const input = prompt("Please Add in alarm set off time", "00:00:00 AM");
+  alarmsArray.push(input);
+  const h1 = document.createElement("h1");
+  h1.textContent = input;
+  alarmDisplay.appendChild(h1);
 });

@@ -46,3 +46,20 @@ label {
   font-size: 18px;
   margin: 0 0.6rem;
 }
+
+/*================= Alarms Styles ================== */
+.alarms-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 480px) {
+  .clock {
+    font-size: 1rem;
+    width: 100%;
+    padding: 2rem;
+  }
+  .wrapper {
+    width: 80%;
+  }
+}
