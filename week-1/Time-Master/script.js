@@ -94,6 +94,7 @@ formatBtn.addEventListener("change", function () {
   document.querySelector(".clock").style.color = "black";
   document.getElementById("format-options").style.backgroundColor =
     "var(--light-green)";
+  document.querySelector(".alarm").style.backgroundColor = "var(--light-green)";
   clearInterval(def);
   setInterval(() => {
     displayClock(12);
