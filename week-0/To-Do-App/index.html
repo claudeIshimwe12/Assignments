@@ -4,52 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>To Do App</title>
+    <title>To-Do App</title>
   </head>
   <body>
     <div class="wrapper">
-      <h1 class="main-text">To Do List App</h1>
+      <h1 class="main-text">To-Do List App</h1>
       <div class="lg-wrapper">
         <div class="left">
-          <h2>Add new task</h2>
+          <h2 class="title">Add New Task</h2>
           <input
             type="text"
-            name="title"
             id="title"
             placeholder="Task Title"
             class="input title-input"
           />
-          <br />
           <textarea
-            name="description"
             id="desc"
             cols="21"
             rows="4"
             placeholder="Task Description"
-            class="description"
+            class="input description"
           ></textarea>
-          <br />
-          <input
-            type="datetime-local"
-            name="expDate"
-            id="expDate"
-            class="input date"
-          />
-          <br />
+          <input type="datetime-local" id="expDate" class="input date" />
           <button class="btn add-task">Create Task</button>
         </div>
-        <div class="right">
-          <div class="task-list">
-            <h1>Task List</h1>
-          </div>
+        <div class="to-do">
+          <h1 class="title">To-Do</h1>
+          <div class="task-list"></div>
         </div>
-        <div class="complete-tasks">
-          <h1>Complete Tasks</h1>
+        <div class="done">
+          <h1 class="title">Done</h1>
           <div class="complete-wrapper"></div>
         </div>
       </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>
